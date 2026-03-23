@@ -1,55 +1,57 @@
 # 🎓 Student Management System (Python CLI)
 
-A simple **Command-Line Interface (CLI)** based Student Management System built using Python.
-This project allows users to manage student records efficiently with features like adding, updating, deleting, and searching student data.
+A simple **Student Management System** built using Python.
+This is a **Command-Line Interface (CLI)** application that allows users to manage student records efficiently.
 
 ---
 
 ## 🚀 Features
 
-* ➕ Add new student records
-* 📋 Display all student records
-* 🏆 Find the topper (highest marks)
+* ➕ Add student records
+* 📋 Display all students (formatted output)
+* 🏆 Find topper (highest marks)
 * ✏️ Update student marks
 * ❌ Delete student records
 * 🔍 Search student by name
-* 💾 Data stored using file handling (`mark.txt`)
+* 📊 Sort students by marks (descending)
+* 🥇 Display Top 3 students
+* 💾 Data persistence using file handling (`mark.txt`)
 
 ---
 
 ## 🛠️ Technologies Used
 
 * Python
-* File Handling (Text File Storage)
+* File Handling (`.txt` file storage)
 
 ---
 
 ## 📂 Project Structure
 
 ```
-project-folder/
+student-management-system/
 │
 ├── main.py        # Main program file
 ├── mark.txt       # Stores student data
-└── README.md      # Project documentation
+└── README.md      # Documentation
 ```
 
 ---
 
 ## ⚙️ How It Works
 
-* The program stores student data in a dictionary.
-* Data is saved in a file (`mark.txt`) for persistence.
-* On running the program, previous data is loaded automatically.
-* Users interact through a menu-driven CLI.
+* Student data is stored in a dictionary (`{name: marks}`).
+* Data is saved into a file (`mark.txt`) using file handling.
+* When the program starts, existing data is automatically loaded.
+* Users interact through a menu-driven CLI system.
 
 ---
 
 ## ▶️ How to Run
 
-1. Make sure Python is installed.
-2. Download or clone this repository.
-3. Run the script:
+1. Install Python
+2. Download or clone this repository
+3. Run the program:
 
 ```
 python main.py
@@ -66,33 +68,35 @@ python main.py
 4.Delete
 5.Update
 6.Search
-7.Exit
+7.Sort
+8.Top 3
+9.Exit
 ```
 
 ---
 
 ## 💡 Learning Outcomes
 
-This project helped in understanding:
-
 * Python dictionaries
-* File I/O operations
-* Function-based programming
-* CLI application design
+* File read/write operations
+* Sorting using lambda functions
+* CLI-based application development
+* Modular programming using functions
 
 ---
 
 ## 🔮 Future Improvements
 
-* Add GUI (Tkinter or PyQt)
-* Use database (SQLite/MySQL)
-* Add user authentication
+* Convert to GUI (Tkinter / PyQt)
+* Build web version using Streamlit
+* Use database instead of text file
+* Add login/authentication system
 
 ---
 
 ## 🤝 Contributing
 
-Feel free to fork this project and improve it!
+Feel free to fork this project and improve it.
 
 ---
 
@@ -102,4 +106,5 @@ Feel free to fork this project and improve it!
 
 ---
 
-⭐ If you like this project, don’t forget to give it a star!
+⭐ If you like this project, give it a star on GitHub!
+
