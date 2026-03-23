@@ -3,6 +3,7 @@ def add():
     name=input("Enter your name:")
     mark=int(input("Enter your mark:"))
     student[name]=mark
+    
     save()
     print("Student added")
 
@@ -10,8 +11,11 @@ def show():
     if len(student)==0:
         print("No data")
         return
+    print("\n...Student list...")
+    print("--------------------")
     for o,i in student.items():
-        print(o,":",i)
+        print(f"{o:<10} | {i}")
+    print("-------------------")
 
 def high():
     if len(student)==0:
@@ -42,7 +46,7 @@ def delete():
     if n in student:
         del student[n]
         save()
-        print("Delete successfully")
+        print("Deleted successfully")
     else:
         print("Student not found")
 
@@ -52,7 +56,7 @@ def update():
         new=int(input("Enter New mark:"))
         student[n]=new
         save()
-        print("Update successfully")
+        print("Updated successfully")
     else:
         print("Student not found")
 
@@ -63,10 +67,30 @@ def search():
     else:
         print("Student not found")
 
+def sort():
+    if len(student)==0:
+        print("No data")
+        return
+    s=sorted(student.items(),key=lambda x:x[1],reverse=True)
+    print("\n....Sorted Student...")
+    for o,i in s:
+        print(f"{o}:{i}")
+
+def top3():
+    if len(student)==0:
+        print("No data")
+        return
+    s=sorted(student.items(),key=lambda x:x[1],reverse=True)
+    print("\n...Top 3 students...")
+    for i in range(min(3,len(s))):
+        name,marks=s[i]
+        print(f"{i+1}.{name}:{marks}")
+
+
 
 load()
 while True:
-    print("\n1.Add\n2.Show\n3.Topper\n4.Delete\n5.Update\n6.Search\n7.Exit")
+    print("\n1.Add\n2.Show\n3.Topper\n4.Delete\n5.Update\n6.Search\n7.Sort\n8.Top 3\n9.Exit")
 
     ch = int(input("Enter choice: "))
 
@@ -83,6 +107,12 @@ while True:
     elif ch==6:
         search()
     elif ch==7:
+        sort()
+    elif ch==8:
+        top3()
+
+    elif ch==9:
+        print("Exiting....")
         break
     else:
         print("Invalid")
