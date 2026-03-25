@@ -54,9 +54,15 @@ class manager:
        if len(self.students) == 0:
         print("No data")
         return
+       
+       print("\n...Student list...")
+       print("....................")
 
        for s in self.students:
-           s.show()
+           print(f"{s.name:<10} | {s.get()}")
+        
+           print("......................")
+          # s.show()
 
 
     def top(self):
@@ -92,13 +98,36 @@ class manager:
                 self.students.append(s)
        except:
           pass
+       
+    def delete(self):
+       name=input("Enter name to delete:")
+
+       for i in self.students:
+        if i.name==name:
+           self.students.remove(i)
+           self.save()
+           print("Deleted successfully")
+           return
+       print("Student not found")
+
+    def update(self):
+      name=input("Enter name:")
+      for i in self.students:
+        if i.name ==name:
+           new=int(input("Enter new mark:"))
+           i.set_mark(new)
+           self.save()
+           print("Updated successfully")
+           return
+      print("Student not found!!")
+
 
 
 
 m=manager()
 
 while True:
-    print("\n1.Add\n2.Show\n3.Topper\n4.Search\n5.Exit")
+    print("\n1.Add\n2.Show\n3.Topper\n4.Search\n5.Delete\n6.Update\n7.Exit")
 
     ch = int(input("Enter choice: "))
 
@@ -111,6 +140,11 @@ while True:
     elif ch == 4:
         m.search()
     elif ch == 5:
+        m.delete()
+    elif ch == 6:
+        m.update()
+    elif ch==7:
+
         break
     else:
         print("Invalid Input")
