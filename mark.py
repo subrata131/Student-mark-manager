@@ -1,5 +1,6 @@
 students=[
     {"name":"Rahul ","roll":1,"mark":85}
+    {"name":"Subrata","roll":2,"mark":75}
 ]
 
 max=students[0]["mark"]
